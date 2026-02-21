@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type Variants } from "framer-motion";
 import {
   GitBranch,
-  Layers,
-  ShieldCheck,
+  Tag,
+  ArrowLeftRight,
   Sliders,
   Wallet,
   Globe,
@@ -23,18 +23,18 @@ const features = [
     bg: "bg-primary/10",
   },
   {
-    icon: Layers,
-    title: "Multi-DEX Aggregation",
+    icon: Tag,
+    title: "Fixed Platform Fee",
     description:
-      "Connected to Minswap, SundaeSwap, WingRiders, MuesliSwap, VyFinance, Spectrum and more — all in one interface.",
+      "One transparent fee of 0.9678 ADA per swap — no percentage cuts, no hidden charges. Know exactly what you pay every time.",
     accent: "text-accent",
     bg: "bg-accent/10",
   },
   {
-    icon: ShieldCheck,
-    title: "Rug Score Checks",
+    icon: ArrowLeftRight,
+    title: "P2P Marketplace",
     description:
-      "Every token is scored for rug-pull risk before you swap. We flag suspicious projects so you can trade with confidence.",
+      "Trade directly with other users via our P2P marketplace. Set your own price, pick your counterparty, no slippage.",
     accent: "text-accent-orange",
     bg: "bg-accent-orange/10",
   },

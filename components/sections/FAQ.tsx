@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "Does Cardexscan charge fees?",
-    a: "Cardexscan charges a small protocol fee on swaps (typically 0.05–0.1%), which is transparent and shown before you confirm any transaction. The underlying DEX fees still apply. The protocol fee helps fund ongoing development and infrastructure.",
+    a: "Cardexscan charges a fixed platform fee of 0.9678 ADA per swap — no percentage cuts, no hidden charges. You always know exactly what you pay before confirming. The underlying DEX fees still apply and are shown transparently in the swap preview.",
   },
   {
     q: "What is a Rug Score?",

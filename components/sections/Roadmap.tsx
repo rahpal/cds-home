@@ -38,7 +38,7 @@ const milestones: Milestone[] = [
   },
   {
     period: "Q1 2025",
-    title: "OTC Marketplace Beta",
+    title: "P2P Marketplace Beta",
     bullets: [
       "Peer-to-peer token trading",
       "Escrow-based settlement",

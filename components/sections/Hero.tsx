@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, TrendingUp, Layers, Activity } from "lucide-react";
+import { ArrowRight, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GradientText } from "@/components/shared/GradientText";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
@@ -11,7 +11,7 @@ const stats = [
   { label: "DEXes integrated", target: 7, suffix: "+" },
   { label: "Tokens tracked", target: 1800, suffix: "+" },
   { label: "Swaps routed", target: 3_700, suffix: "+" },
-  { label: "ADA volume", target: 2300000, suffix: "+" },
+  { label: "ADA volume", target: 2300000, suffix: "₳ +" },
 ];
 
 const easeOut = [0.25, 0.1, 0.25, 1] as const;
@@ -42,30 +42,21 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background dot grid */}
-      <div
-        className="absolute inset-0 bg-dot-grid bg-dot-grid opacity-30"
-        aria-hidden
-      />
+      <div className="absolute inset-0 bg-dot-grid opacity-30" aria-hidden />
 
-      {/* Animated glow orbs */}
+      {/* Glow orbs */}
       {!reduced && (
         <>
           <motion.div
             className="absolute top-1/4 left-1/4 w-[600px] h-[600px] rounded-full opacity-20 pointer-events-none"
-            style={{
-              background: "radial-gradient(circle, #0066FF 0%, transparent 70%)",
-              y: blueOrbY,
-            }}
-            animate={{ x: [0, 40, 0], y: [0, -30, 0] }}
+            style={{ background: "radial-gradient(circle, #0066FF 0%, transparent 70%)", y: blueOrbY }}
+            animate={{ x: [0, 40, 0] }}
             transition={{ duration: 14, repeat: Infinity, ease: [0.42, 0, 0.58, 1] }}
           />
           <motion.div
             className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-15 pointer-events-none"
-            style={{
-              background: "radial-gradient(circle, #00C9A7 0%, transparent 70%)",
-              y: tealOrbY,
-            }}
-            animate={{ x: [0, -30, 0], y: [0, 20, 0] }}
+            style={{ background: "radial-gradient(circle, #00C9A7 0%, transparent 70%)", y: tealOrbY }}
+            animate={{ x: [0, -30, 0] }}
             transition={{ duration: 10, repeat: Infinity, ease: [0.42, 0, 0.58, 1] }}
           />
         </>
@@ -79,7 +70,10 @@ export function Hero() {
         {/* Badge */}
         <motion.div {...(reduced ? {} : fadeUp(0.1))}>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium">
-            <Activity className="w-3.5 h-3.5" />
+            <span className="relative flex items-center justify-center w-3.5 h-3.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60" />
+              <Activity className="relative w-3.5 h-3.5 text-green-400" />
+            </span>
             Live on Cardano Mainnet
           </span>
         </motion.div>
@@ -115,9 +109,7 @@ export function Hero() {
             </a>
           </Button>
           <Button size="xl" variant="outline" asChild>
-            <a href="#features">
-              Explore Features
-            </a>
+            <a href="#features">Explore Features</a>
           </Button>
         </motion.div>
 
@@ -129,16 +121,12 @@ export function Hero() {
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center gap-1">
               <span className="text-3xl md:text-4xl font-bold font-heading font-mono text-text-primary">
-                <AnimatedCounter
-                  target={stat.target}
-                  suffix={stat.suffix}
-                />
+                <AnimatedCounter target={stat.target} suffix={stat.suffix} />
               </span>
               <span className="text-sm text-text-secondary">{stat.label}</span>
             </div>
           ))}
         </motion.div>
-
       </motion.div>
     </section>
   );
