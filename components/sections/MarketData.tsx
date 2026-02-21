@@ -14,9 +14,7 @@ export async function MarketData() {
 
   const ada = adaPrice ?? mockAdaPrice;
   const tokens = trendingTokens ?? mockTrendingTokens;
-  const trades =
-    globalTrades ??
-    mockRecentTrades.map((t) => ({ ...t, timestamp: t.timestamp.toISOString() }));
+  const trades = globalTrades ?? mockRecentTrades;
 
   return (
     <section id="market" className="section-padding">
