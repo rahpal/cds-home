@@ -3,7 +3,7 @@ import { Twitter, Github, MessageCircle, Send } from "lucide-react";
 const productLinks = [
   { label: "Swap", href: "https://app.cardexscan.com/swap" },
   { label: "Market Data", href: "https://app.cardexscan.com/global-trades" },
-  { label: "OTC Marketplace", href: "https://app.cardexscan.com/p2p/marketplace" },
+  { label: "P2P Marketplace", href: "https://app.cardexscan.com/p2p/marketplace" },
   { label: "Token Explorer", href: "https://app.cardexscan.com/home" },
 ];
 
@@ -94,18 +94,10 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-border mt-12 pt-8 flex items-center justify-center">
           <p className="text-text-secondary text-xs">
             © {new Date().getFullYear()} Cardexscan. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-text-secondary text-xs hover:text-text-primary transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-text-secondary text-xs hover:text-text-primary transition-colors">
-              Terms of Service
-            </a>
-          </div>
         </div>
       </div>
     </footer>
