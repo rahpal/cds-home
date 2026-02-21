@@ -7,10 +7,10 @@ import { SectionHeader } from "@/components/shared/SectionHeader";
 const S3 = "https://cardexscan.s3.amazonaws.com";
 
 const dexes = [
+  { name: "Minswap V2", color: "#8B5CF6", logo: `${S3}/public/minswapv2logodh.png` },
   { name: "Minswap",    color: "#00B9F1", logo: `${S3}/public/minswap.png` },
   { name: "SundaeSwap", color: "#F59E0B", logo: `${S3}/sundaev3.jpg` },
   { name: "WingRiders", color: "#00C9A7", logo: `${S3}/public/wingriders.png` },
-  { name: "MuesliSwap", color: "#8B5CF6", logo: `${S3}/public/muesli.png` },
   { name: "VyFinance",     color: "#EF4444", logo: `${S3}/public/vyfi.png` },
   { name: "Spectrum",      color: "#F97316", logo: `${S3}/public/spectrum.png` },
   { name: "Splash",        color: "#3B82F6", logo: `${S3}/public/splashlogo.jpeg` },

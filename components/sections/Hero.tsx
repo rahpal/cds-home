@@ -11,6 +11,7 @@ const stats = [
   { label: "DEXes integrated", target: 7, suffix: "+" },
   { label: "Tokens tracked", target: 1800, suffix: "+" },
   { label: "Swaps routed", target: 3_700, suffix: "+" },
+  { label: "ADA volume", target: 2300000, suffix: "+" },
 ];
 
 const easeOut = [0.25, 0.1, 0.25, 1] as const;
